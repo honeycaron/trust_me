@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddAlarmActivity">
+
+    <TimePicker
+        android:layout_margin="30dp"
+        android:id="@+id/timepicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:timePickerMode="spinner"></TimePicker>
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <CheckBox
+            android:id="@+id/check1"
+            android:text="월"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <CheckBox
+            android:layout_marginLeft="5dp"
+            android:id="@+id/check2"
+            android:text="화"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <CheckBox
+            android:layout_marginLeft="5dp"
+            android:id="@+id/check3"
+            android:text="수"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <CheckBox
+            android:layout_marginLeft="5dp"
+            android:id="@+id/check4"
+            android:text="목"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <CheckBox
+            android:layout_marginLeft="5dp"
+            android:id="@+id/check5"
+            android:text="금"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <CheckBox
+            android:layout_marginLeft="5dp"
+            android:id="@+id/check6"
+            android:text="토"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <CheckBox
+            android:layout_marginLeft="5dp"
+            android:id="@+id/check7"
+            android:text="일"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+    <EditText
+        android:layout_margin="15dp"
+        android:textSize="25sp"
+        android:hint="알람 이름"
+        android:id="@+id/editname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/btnloc"
+            android:layout_margin="15dp"
+            android:src="@android:drawable/ic_dialog_map"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:textSize="22sp"
+            android:text="위치"
+            android:id="@+id/tvlocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <Spinner
+        android:layout_margin="15dp"
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></Spinner>
+
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="25sp"
+            android:id="@+id/tvmessage"
+            android:text="메시지"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Switch
+            android:layout_gravity="center_vertical"
+            android:gravity="right"
+            android:id="@+id/switchmessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="25sp"
+            android:id="@+id/tvpasswd"
+            android:text="비밀번호 설정"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Switch
+            android:layout_gravity="center_vertical"
+            android:gravity="right"
+            android:id="@+id/switchpassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <Button
+        android:onClick="addAlarm"
+        android:text="저장"
+        android:id="@+id/btnadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
