@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mcv_selectionColor='@color/color_CalendarAccent'
+        app:mcv_showOtherDates="defaults" />
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/calendar_tv_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="날짜를 누르면 성공/실패한 알람 리스트가 떠요!"></TextView>
+    </ScrollView>
+
+
+</LinearLayout>

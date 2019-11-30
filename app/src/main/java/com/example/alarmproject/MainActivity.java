@@ -14,6 +14,8 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Switch;
 
+import com.example.alarmproject.Calendar.CalendarActivity;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnAdd = (Button)findViewById(R.id.btnAdd);
+        Button btnAdd = findViewById(R.id.btnAdd);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,5 +57,10 @@ public class MainActivity extends AppCompatActivity {
             adapter = new AlarmListAdapter(this,allItems);
             listView.setAdapter(adapter);
         }
+    }
+
+    public void goCalendarActivity(View view) {
+        Intent intent = new Intent(this, CalendarActivity.class);
+        startActivity(intent);
     }
 }
