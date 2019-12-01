@@ -102,6 +102,13 @@
                 android:layout_height="wrap_content"
                 android:text="위치"
                 android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/btnloctest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="지도테스트버튼"/>
+
         </LinearLayout>
 
         <Spinner
@@ -122,6 +129,12 @@
                 android:layout_height="wrap_content"
                 android:text="메시지"
                 android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/btnmsgtest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="메세지테스트버튼"/>
 
             <Switch
                 android:id="@+id/switchmessage"

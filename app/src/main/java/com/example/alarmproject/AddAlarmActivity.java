@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -68,6 +69,26 @@ public class AddAlarmActivity extends AppCompatActivity {
 
         passwd = "0";
         mAlarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+
+
+        // test loc, msg //
+        Button btnloctest = (Button)findViewById(R.id.btnloctest);
+        Button btnmsgtest = (Button)findViewById(R.id.btnmsgtest);
+
+        btnloctest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnmsgtest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MessageActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -212,5 +233,6 @@ public class AddAlarmActivity extends AppCompatActivity {
         PendingIntent pending = getPendingIntent(intent);
         this.mAlarmManager.cancel(pending);
     }
+
 
 }
