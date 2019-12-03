@@ -1,8 +1,12 @@
 package com.example.alarmproject;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -43,6 +47,28 @@ public class MessageActivity extends AppCompatActivity {
 
             }
         });
-
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+            Log.d("SKKU", "Permission is not granted, requesting");
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, 123);
+            buttonSend.setEnabled(false);
+        } else {
+            Log.d("SKKU", "Permission is granted");
+        }
     }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        if (requestCode == 123) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Log.d("SKKU", "Permission has been granted");
+                buttonSend.setEnabled(true);
+            } else {
+                Log.d("SKKU", "Permission has been denied or request cancelled");
+                buttonSend.setEnabled(false);
+            }
+        }
+    }
+
+
+
 }
